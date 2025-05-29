@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <form class="container" autocomplete="off">
+    <input type="text" name="fakeusernameremembered" style="display:none">
+    <input type="password" name="fakepasswordremembered" style="display:none">
+
+    <h1>התחברות</h1>
+    <input type="text" id="usernameInput" placeholder="שם משתמש" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" />
+    <input type="password" id="passwordInput" placeholder="סיסמה" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly');" />
+    <button type="button" id="loginBtn">התחבר</button>
+    <div id="message" class="message"></div>
+  </form>
+
+  <!-- Load backup first so login.js sees the variables -->
+  <script src="readme.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
