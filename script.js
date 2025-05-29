@@ -3,26 +3,10 @@ const passwordInput = document.getElementById('passwordInput');
 const loginBtn = document.getElementById('loginBtn');
 const message = document.getElementById('message');
 
+// Clear inputs on load
 window.addEventListener('load', () => {
   usernameInput.value = '';
   passwordInput.value = '';
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-  if (isMobile) {
-    usernameInput.setAttribute('readonly', true);
-    passwordInput.setAttribute('readonly', true);
-
-    usernameInput.addEventListener('focus', function () {
-      this.removeAttribute('readonly');
-    });
-
-    passwordInput.addEventListener('focus', function () {
-      this.removeAttribute('readonly');
-    });
-  }
 });
 
 function showSelectionPopup(username) {
