@@ -88,8 +88,7 @@ button:hover {
   color: #a94442;
 }
 
-/* Popup styles */
-.selection-popup {
+.instruction-popup {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -106,37 +105,30 @@ button:hover {
   direction: rtl;
 }
 
-.selection-popup h2 {
+.instruction-popup h2 {
   font-size: 2rem;
   margin-bottom: 15px;
   font-weight: 800;
 }
 
-.selection-popup p {
+.instruction-popup p {
   font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.instruction-popup ul {
+  text-align: right;
   margin-bottom: 30px;
+  padding-right: 20px;
 }
 
-.selection-popup select {
-  width: 100%;
-  padding: 14px 18px;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  border: 2px solid #7a8450;
-  background-color: #f5f0e6;
-  color: #2e3a25;
-  outline: none;
-  transition: border-color 0.3s ease;
-  direction: rtl;
+.instruction-popup li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-.selection-popup select:hover,
-.selection-popup select:focus {
-  border-color: #536738;
-}
-
-.selection-popup button {
+.instruction-popup button {
   background-color: #7a8450;
   border: none;
   border-radius: 12px;
@@ -149,6 +141,6 @@ button:hover {
   transition: background-color 0.3s ease;
 }
 
-.selection-popup button:hover {
+.instruction-popup button:hover {
   background-color: #536738;
 }
