@@ -8,6 +8,23 @@ window.addEventListener('load', () => {
   passwordInput.value = '';
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    usernameInput.setAttribute('readonly', true);
+    passwordInput.setAttribute('readonly', true);
+
+    usernameInput.addEventListener('focus', function () {
+      this.removeAttribute('readonly');
+    });
+
+    passwordInput.addEventListener('focus', function () {
+      this.removeAttribute('readonly');
+    });
+  }
+});
+
 function showSelectionPopup(username) {
   const popup = document.createElement('div');
   popup.className = 'selection-popup';
