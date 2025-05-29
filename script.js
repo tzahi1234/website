@@ -3,6 +3,18 @@ const passwordInput = document.getElementById('passwordInput');
 const loginBtn = document.getElementById('loginBtn');
 const message = document.getElementById('message');
 
+// Sample user credentials
+const userPasswords = {
+  'user1': 'password1',
+  'user2': 'password2'
+};
+
+// Sample dropdown options
+const dropdownOptions = [
+  { label: 'Option 1', url: 'https://example.com/option1' },
+  { label: 'Option 2', url: 'https://example.com/option2' }
+];
+
 // Clear inputs on load
 window.addEventListener('load', () => {
   usernameInput.value = '';
