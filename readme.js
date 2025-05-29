@@ -1,6 +1,6 @@
 const encodedUserPasswords = {
   "dGVzdA==": "dGVzdDEyMw==",
-  "YWRtaW4=": "YWRtaW50ZXN0MTIz" 
+  "YWRtaW4=": "YWRtaW50ZXN0MTIz"
 };
 
 const userPasswords = Object.fromEntries(
