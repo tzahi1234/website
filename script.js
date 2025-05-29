@@ -3,7 +3,6 @@ const passwordInput = document.getElementById('passwordInput');
 const loginBtn = document.getElementById('loginBtn');
 const message = document.getElementById('message');
 
-// Clear inputs on load
 window.addEventListener('load', () => {
   usernameInput.value = '';
   passwordInput.value = '';
