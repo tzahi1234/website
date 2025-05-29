@@ -8,30 +8,29 @@ window.addEventListener('load', () => {
   passwordInput.value = '';
 });
 
-function showSelectionPopup(username) {
+function showInstructionPopup(username) {
   const popup = document.createElement('div');
-  popup.className = 'selection-popup';
-
-  let optionsHTML = '<option value="" disabled selected>בחר אפשרות</option>';
-  dropdownOptions.forEach(option => {
-    optionsHTML += `<option value="${option.url}">${option.label}</option>`;
-  });
+  popup.className = 'instruction-popup';
 
   popup.innerHTML = `
     <h2>ברוך הבא, ${username}</h2>
-    <p>בחר לאן תרצה להיכנס:</p>
-    <select id="selectionMenu">${optionsHTML}</select>
-    <button id="enterBtn">המשך</button>
+    <p>אנא קרא את ההוראות הבאות לפני שתמשיך:</p>
+    <ul>
+      <li>לאחר לחיצה על כפתור "המשך", יופיע חלון צ'אט. בראש החלון תראו את ההודעה "לחץ כאן כדי להתחיל" לחצו על ההודעה כדי להתחיל את השיחה.</li>
+      <li>לאחר הלחיצה, תוצגנה מספר אפשרויות נושא, ממוספרות מ-1 עד 8. הקלידו את המספר המתאים לנושא שמעניין אתכם.</li>
+      <li>הצ'אט ימשיך לשאול שאלות בהתאם לנושא שבחרתם. חשוב להשיב בצורה מדויקת ונכונה.</li>
+    </ul>
+    <button id="continueBtn">המשך</button>
   `;
 
   document.body.appendChild(popup);
 
-  document.getElementById('enterBtn').addEventListener('click', () => {
-    const selectedURL = document.getElementById('selectionMenu').value;
-    if (selectedURL) {
-      window.location.href = selectedURL;
+  document.getElementById('continueBtn').addEventListener('click', () => {
+    const firstURL = dropdownOptions[0]?.url;
+    if (firstURL) {
+      window.location.href = firstURL;
     } else {
-      alert('אנא בחר אפשרות.');
+      alert('לא נמצאו קישורים זמינים.');
     }
   });
 }
@@ -58,7 +57,7 @@ loginBtn.addEventListener('click', () => {
 
     setTimeout(() => {
       document.querySelector('.container').style.display = 'none';
-      showSelectionPopup(enteredUsername);
+      showInstructionPopup(enteredUsername);
     }, 1000);
   } else {
     message.textContent = 'שם משתמש או סיסמה שגויים.';
